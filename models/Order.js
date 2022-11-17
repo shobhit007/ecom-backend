@@ -5,11 +5,18 @@ const orderSchema = new mongoose.Schema(
     userId: { type: String, required: true },
     orders: [
       {
-        productId: { type: String },
-        productName: { type: String },
-        amount: { type: Number },
-        address: { type: Object },
-        status: { type: String },
+        product: {
+          id: String,
+          name: String,
+          price: Number,
+          quantity: Number,
+          size: String,
+          color: String,
+          image: String,
+        },
+        address: { type: String },
+        name: { type: String },
+        status: { type: String, default: "pending" },
       },
     ],
   },
